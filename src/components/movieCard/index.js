@@ -15,6 +15,7 @@ import { Link } from "react-router-dom";
 import Avatar from "@material-ui/core/Avatar";
 import { MoviesContext } from "../../contexts/moviesContext";
 import img from '../../images/film-poster-placeholder.png'
+import PlayListAddIcon from '@material-ui/icons/PlaylistAdd'
 
 
 const useStyles = makeStyles({
