@@ -1,4 +1,5 @@
 import React from "react";
+import PlayListAddIcon from '@material-ui/icons/PlaylistAdd'
 import PageTemplate from "../components/templateMovieListPage";
 import { useQuery } from 'react-query'
 import Spinner from '../components/spinner'
@@ -22,6 +23,7 @@ const UpcomingMoviesPage = (props) => {
         movies={movies}
         action={(movie) => {
           return <AddToFavoritesIcon movie={movie} />
+          return <PlayListAddIcon movie={movie} />
         }}
       />
   );
