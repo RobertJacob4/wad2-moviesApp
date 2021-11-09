@@ -4,12 +4,20 @@ import { BrowserRouter, Route, Redirect, Switch, Link } from "react-router-dom";
 import HomePage from "./pages/homePage";
 import MoviePage from "./pages/movieDetailsPage";
 import FavoriteMoviesPage from "./pages/favoriteMoviesPage"; // NEW
+import MovieDetailsPage from './pages/movieDetailsPage'
 import MovieReviewPage from "./pages/movieReviewPage";
 import SiteHeader from './components/siteHeader';
 import { QueryClientProvider, QueryClient } from "react-query";
 import MoviesContextProvider from "./contexts/moviesContext";
 import { ReactQueryDevtools } from 'react-query/devtools'
 import AddMovieReviewPage from './pages/addMovieReviewPage'
+
+const CPimages = [
+  "/rjBwhsOzHKUw2NIOrE7aMqjfe6s.jpg",
+  "/kOVEVeg59E0wsnXmF9nrh6OmWII.jpg",
+  "/2iGN0aKHJYD0xQydlfuCUAcgNbO.jpg",
+  "/v1QQKq8M0fWxMgSdGOX1aCv8qMB.jpg",
+]
 
 const queryClient = new QueryClient({
   defaultOptions: {
