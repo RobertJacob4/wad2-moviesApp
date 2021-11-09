@@ -4,12 +4,13 @@ import { BrowserRouter, Route, Redirect, Switch, Link } from "react-router-dom";
 import HomePage from "./pages/homePage";
 import MoviePage from "./pages/movieDetailsPage";
 import FavoriteMoviesPage from "./pages/favoriteMoviesPage"; // NEW
-import MovieDetailsPage from './pages/movieDetailsPage'
+import MovieDetailsPage from './pages/movieDetailsPage';
 import MovieReviewPage from "./pages/movieReviewPage";
 import SiteHeader from './components/siteHeader';
 import { QueryClientProvider, QueryClient } from "react-query";
 import MoviesContextProvider from "./contexts/moviesContext";
-import { ReactQueryDevtools } from 'react-query/devtools'
+import { ReactQueryDevtools } from 'react-query/devtools';
+import UpcomingMoviesPage from "./pages/upcomingMoviesPage";
 import AddMovieReviewPage from './pages/addMovieReviewPage'
 
 const CPimages = [
@@ -37,6 +38,7 @@ const App = () => {
         <MoviesContextProvider>
             {" "}
             <Switch>
+        <Route exact path="/movies/upcoming" component={UpcomingMoviesPage} />
         <Route exact path="/reviews/form" component={AddMovieReviewPage} />
         <Route path="/reviews/:id" component={MovieReviewPage} />
         <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
