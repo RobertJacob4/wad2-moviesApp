@@ -28,6 +28,7 @@ export const getTopRated = (args) => {
   });
 };
 
+
 export const getNowPlaying = (args) => {
   //console.log(args)
   return fetch(
@@ -42,6 +43,7 @@ export const getNowPlaying = (args) => {
     throw error
   });
 };
+
 
 export const getMovie = (args) => {
   // console.log(args)

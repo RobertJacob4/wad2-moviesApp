@@ -13,7 +13,9 @@ import { ReactQueryDevtools } from 'react-query/devtools';
 import UpcomingMoviesPage from "./pages/upcomingMoviesPage";
 import AddMovieReviewPage from './pages/addMovieReviewPage';
 import TopRatedPage from "./pages/topRatedPage";
-import NowPlayingPage from "./pages/nowPlayingPage"
+import NowPlayingPage from "./pages/nowPlayingPage";
+import SignUpPage from "./pages/signUpPage";
+import LogInPage from "./pages/logInPage"
 
 const CPimages = [
   "/rjBwhsOzHKUw2NIOrE7aMqjfe6s.jpg",
@@ -46,6 +48,8 @@ const App = () => {
         <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
         <Route exact path="/movies/topRated" component={TopRatedPage} />
         <Route exact path="/movies/now_playing" component={NowPlayingPage} />
+        <Route exact path="/signUp" component={SignUpPage} />
+        <Route exact path="/logIn" component={LogInPage} />
         <Route path="/movies/:id" component={MoviePage} />
         <Route exact path="/" component={HomePage} />
         <Redirect from="*" to="/" />
