@@ -9,7 +9,6 @@ export default function LogInForm() {
 
     const emailRef = useRef()
     const passwordRef = useRef()
-
     const {logIn} = useAuth()
     const [error,setError] = useState("")
     const [loading,setLoading] = useState(false)
@@ -54,7 +53,7 @@ export default function LogInForm() {
         </Card>
 
         <div className="w-100 text-center mt-2">
-            Don't have an account? <Link to="/signUp">Sign Up</Link>
+            Need an account? <Link to="/signUp">Sign Up</Link>
         </div>
 
         </>
