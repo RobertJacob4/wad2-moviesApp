@@ -65,6 +65,7 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
           label={`${movie.vote_average} (${movie.vote_count}`}
         />
         <Chip label={`Released: ${movie.release_date}`} />
+        <Chip label={`Budget: ${movie.budget.toLocaleString()}`} />
       </Paper>
 
       <Paper component="ul" className={classes.root}>

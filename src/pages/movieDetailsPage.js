@@ -1,11 +1,12 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
+import { Link, Route, withRouter } from "react-router-dom";
 import MovieDetails from "../components/movieDetails";
 import PageTemplate from "../components/templateMoviePage";
 //import useMovie from "../hooks/useMovie";
-import { getMovie } from '../api/tmdb-api'
+import { getMovie } from '../api/tmdb-api';
 import { useQuery } from "react-query";
-import Spinner from '../components/spinner'
+import Spinner from '../components/spinner';
+import MovieCredits from '../components/movieCredits';
 
 const MovieDetailsPage = (props) => {
   const { id } = props.match.params
@@ -28,7 +29,8 @@ const MovieDetailsPage = (props) => {
       {movie ? (
         <>
           <PageTemplate movie={movie}>
-            <MovieDetails movie={movie} />
+            <MovieDetails movie={movie}/>
+            <MovieCredits movie={movie}/>
           </PageTemplate>
         </>
       ) : (
