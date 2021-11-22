@@ -1,6 +1,7 @@
 import React , {useContext,useState, useEffect}from 'react'
 import {app} from "../firebase"
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} from "firebase/auth";
+import firebase from 'firebase/compat'
 
 
 const AuthContext = React.createContext();
@@ -8,14 +9,14 @@ const auth=getAuth()
 export function useAuth(){
     return useContext(AuthContext);
 }
+export function AuthProvider({children}) {
 
-export default function AuthProvider({children}) {
     const [currentUser,setCurrentUser] = useState()
     const [loading,setLoading] = useState(false)
 
     function signUp(email,password){
-        return createUserWithEmailAndPassword(auth,email,password) .then((userCredential) => {
-           
+
+        createUserWithEmailAndPassword(auth,email,password) .then((userCredential) => {
             const user = userCredential.user;
            
           })
@@ -28,9 +29,7 @@ export default function AuthProvider({children}) {
     }
 
     function logIn(email,password){
-
-
-        return signInWithEmailAndPassword(auth,email,password) .then((userCredential) => {
+        signInWithEmailAndPassword(auth,email,password) .then((userCredential) => {
            
             const user = userCredential.user;
           })

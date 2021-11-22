@@ -9,12 +9,15 @@ export default function LogInForm() {
 
     const emailRef = useRef()
     const passwordRef = useRef()
+
     const {logIn} = useAuth()
     const [error,setError] = useState("")
     const [loading,setLoading] = useState(false)
+
     const history = useHistory()
 
     async function handleSubmit(e){
+
         e.preventDefault() //stop refresh
 
         try{
