@@ -18,6 +18,7 @@ import signIn from "./pages/signInPage";
 import "bootstrap/dist/css/bootstrap.min.css"
 import PrivateRoute from "./components/userAuth/privateRoute";
 import accountStatePage from "./pages/accountStatePage";
+import ActorsPage from "./pages/actorsPage";
 
 
 
@@ -47,6 +48,7 @@ const App = () => {
             {" "}
             <Switch>
         <Route exact path="/movies/home" component={HomePage}/>
+        <PrivateRoute exact path="/actors" component={ActorsPage}/>
         <PrivateRoute exact path="/movies/upcoming" component={UpcomingMoviesPage} />
         <PrivateRoute exact path="/reviews/form" component={AddMovieReviewPage} />
         <PrivateRoute path="/reviews/:id" component={MovieReviewPage} />
