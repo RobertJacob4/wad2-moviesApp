@@ -4,9 +4,16 @@ import { useQuery } from 'react-query'
 import Spinner from '../components/spinner'
 import {getMovies} from '../api/tmdb-api'
 import AddToFavoritesIcon from '../components/cardIcons/addToFavorites'
+import SiteHeader from "../components/siteHeader";
+import { Switch } from "@material-ui/core";
 
 const HomePage = (props) => {
   const {  data, error, isLoading, isError }  = useQuery('discover', getMovies)
+  // const [page, setPage] = React.useState(1);
+  // const {data, error, isLoading, isError}  = useQuery(['discover',{page : page}], getMovies)
+  // const handleChange = (event, value) => {
+  //   setPage(value);
+  // };
 
   if (isLoading) {
     return <Spinner />

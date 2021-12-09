@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, Route, Redirect, Switch, Link } from "react-router-dom";
+import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
 import HomePage from "./pages/homePage";
 import MoviePage from "./pages/movieDetailsPage";
 import FavoriteMoviesPage from "./pages/favoriteMoviesPage"; // NEW
@@ -14,9 +14,9 @@ import UpcomingMoviesPage from "./pages/upcomingMoviesPage";
 import AddMovieReviewPage from './pages/addMovieReviewPage';
 import TopRatedPage from "./pages/topRatedPage";
 import NowPlayingPage from "./pages/nowPlayingPage";
-import signUpPage from "./pages/signUpPage";
-import logIn from "./pages/logInPage";
+import signIn from "./pages/signInPage";
 import "bootstrap/dist/css/bootstrap.min.css"
+import PrivateRoute from "./components/userAuth/privateRoute";
 
 
 const CPimages = [
@@ -44,16 +44,15 @@ const App = () => {
         <MoviesContextProvider>
             {" "}
             <Switch>
-        <Route exact path="/movies/upcoming" component={UpcomingMoviesPage} />
-        <Route exact path="/reviews/form" component={AddMovieReviewPage} />
-        <Route path="/reviews/:id" component={MovieReviewPage} />
-        <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
-        <Route exact path="/movies/topRated" component={TopRatedPage} />
-        <Route exact path="/movies/now_playing" component={NowPlayingPage} />
-        <Route exact path="/signUp" component={signUpPage} />
-        <Route exact path="/logIn" component={logIn} />
-        <Route path="/movies/:id" component={MoviePage} />
-        <Route exact path="/" component={HomePage} />
+        <Route exact path="/movies/home" component={HomePage}/>
+        <PrivateRoute exact path="/movies/upcoming" component={UpcomingMoviesPage} />
+        <PrivateRoute exact path="/reviews/form" component={AddMovieReviewPage} />
+        <PrivateRoute path="/reviews/:id" component={MovieReviewPage} />
+        <PrivateRoute exact path="/movies/favorites" component={FavoriteMoviesPage} />
+        <PrivateRoute exact path="/movies/topRated" component={TopRatedPage} />
+        <PrivateRoute exact path="/movies/now_playing" component={NowPlayingPage} />
+        <PrivateRoute path="/movies/:id" component={MoviePage} />
+        <Route exact path="/" component={signIn} />
         <Redirect from="*" to="/" />
         </Switch>
         </MoviesContextProvider>
