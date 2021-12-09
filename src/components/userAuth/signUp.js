@@ -1,8 +1,8 @@
 import React, { useRef, useState } from "react"
 import { Form, Button, Card, Alert } from "react-bootstrap"
 import { Link, useHistory } from "react-router-dom"
-import { createUserWithEmailAndPassword } from "@firebase/auth"
 import { auth } from "../../firebase"
+import { createUserWithEmailAndPassword } from "firebase/auth"
 
 export default function Signup() {
   const emailRef = useRef()
@@ -22,7 +22,7 @@ export default function Signup() {
     try {
       setError("")
       setLoading(true)
-      createUserWithEmailAndPassword(auth,emailRef.current.value, passwordRef.current.value)
+      await createUserWithEmailAndPassword(auth,emailRef.current.value, passwordRef.current.value)
       history.push("/")
     } catch {
       setError("Failed to create an account")
@@ -57,7 +57,7 @@ export default function Signup() {
         </Card.Body>
       </Card>
       <div className="w-100 text-center mt-2">
-        Already have an account? <Link to="/login">Log In</Link>
+        Already have an account? <Link to="/">Log In</Link>
       </div>
     </>
   )

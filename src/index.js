@@ -17,6 +17,8 @@ import NowPlayingPage from "./pages/nowPlayingPage";
 import signIn from "./pages/signInPage";
 import "bootstrap/dist/css/bootstrap.min.css"
 import PrivateRoute from "./components/userAuth/privateRoute";
+import accountStatePage from "./pages/accountStatePage";
+
 
 
 const CPimages = [
@@ -52,6 +54,7 @@ const App = () => {
         <PrivateRoute exact path="/movies/topRated" component={TopRatedPage} />
         <PrivateRoute exact path="/movies/now_playing" component={NowPlayingPage} />
         <PrivateRoute path="/movies/:id" component={MoviePage} />
+        <PrivateRoute path="/account" component={accountStatePage} />
         <Route exact path="/" component={signIn} />
         <Redirect from="*" to="/" />
         </Switch>

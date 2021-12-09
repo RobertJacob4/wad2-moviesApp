@@ -2,8 +2,8 @@ import React, { useRef, useState } from "react"
 import { Form, Button, Card, Alert } from "react-bootstrap"
 
 import { Link, useHistory } from "react-router-dom"
-import { signInWithEmailAndPassword } from "@firebase/auth"
 import { auth } from "../../firebase"
+import { signInWithEmailAndPassword } from "firebase/auth"
 
   export default function Login() {
   const emailRef = useRef()
@@ -20,7 +20,7 @@ import { auth } from "../../firebase"
     try {
       setError("")
       setLoading(true)
-      signInWithEmailAndPassword(auth,emailRef.current.value, passwordRef.current.value)
+      await signInWithEmailAndPassword(auth,emailRef.current.value, passwordRef.current.value)
       history.push('/movies/home')
       window.location.reload(false)
     } catch {
