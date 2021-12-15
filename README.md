@@ -38,8 +38,6 @@ The following commands may be required :
 
 ### UI Design.
 
-[ Insert screenshots of the __new/modified app pages__ you developed (and modified existing pages), Include an appropriate caption for each one (see example below).
-
 ![image](/images/login.png)
 
 >Login Page with public route, user logs in with authenticated email and password.
